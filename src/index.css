@@ -47,6 +47,10 @@ header {
 	font-weight: 500;
 }
 
+.navbar ul li a:hover {
+	color: #ef3854;
+}
+
 .navbar ul li:last-child a {
 	padding-right: 0px;
 }
