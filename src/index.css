@@ -242,6 +242,10 @@ footer ul li a:hover {
 	color: rgba(255, 255, 255, 0.8);
 }
 
+.about_section {
+	margin: 90px 0 70px;
+}
+
 @media (max-width: 767px) {
 	.col_services {
 		margin-bottom: 20px;
@@ -249,5 +253,18 @@ footer ul li a:hover {
 
 	.service_section .col-xs-12:last-child .col_services {
 		margin: 0;
+	}
+
+	.service_row, 
+	.review_row {
+		display: block;
+	}
+
+	.service_row a:hover {
+		margin: 0;
+	}
+
+	.col-xs-12 {
+		width: 100%;
 	}
 }
