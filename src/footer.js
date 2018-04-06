@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link} from 'react-router-dom';
 
-class Header extends React.Component {
+class Footer extends React.Component {
   render() {
     return(
       <div>
@@ -29,10 +29,10 @@ class Header extends React.Component {
               <div className="col-xs-12 col-sm-3">
                 <h3>Follow us</h3>
                 <ul>
-                  <li><Link to="#">Home</Link></li>
-                  <li><Link to="#about">About</Link></li>
-                  <li><Link to="#">Services</Link></li>
-                  <li><Link to="#">Contact us</Link></li>
+                  <li><Link to="#">Facebook</Link></li>
+                  <li><Link to="#about">Twitter</Link></li>
+                  <li><Link to="#">Linkedin</Link></li>
+                  <li><Link to="#">Instagram</Link></li>
                 </ul>
               </div>
               <div className="col-xs-12 col-sm-3">
@@ -47,4 +47,4 @@ class Header extends React.Component {
   }
 }
 
-export default withRouter(Header);
+export default withRouter(Footer);

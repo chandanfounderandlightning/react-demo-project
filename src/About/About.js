@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../src/Header';
+import Footer from '../../src/footer';
 import HeaderContent from '../components/HeaderContent/HeaderContent';
 import { withRouter } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ class About extends React.Component {
                             </div>                        
                         </div>
                     </section>
+                    <Footer />
                 </div>
             </div>
         )
