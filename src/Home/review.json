@@ -1,0 +1,17 @@
+[
+	{
+		"clientpic": "./images/client1.jpg",
+		"paragraph": "Proin posuere, dui vel porttitor blandit, tortor ipsum hendrerit ante, nec condimentum ligula massa vehicula orci.",
+		"heading": "– Jan Bloggs"
+	},
+	{
+		"clientpic": "./images/client2.jpg",
+		"paragraph": "Proin posuere, dui vel porttitor blandit, tortor ipsum hendrerit ante, nec condimentum ligula massa vehicula orci.",
+		"heading": "– Mark Joe"
+	},
+	{
+		"clientpic": "./images/client3.jpg",
+		"paragraph": "Proin posuere, dui vel porttitor blandit, tortor ipsum hendrerit ante, nec condimentum ligula massa vehicula orci.",
+		"heading": "– Steve Jeff"
+	}
+]
