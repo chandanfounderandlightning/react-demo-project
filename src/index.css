@@ -27,6 +27,12 @@ p {
 	margin-bottom: 24px;
 }
 
+header {
+	padding: 10px 0 0;
+	margin: 0 0 30px;
+	/*box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.12), 0 15px 70px 0 rgba(22, 26, 26, 0.12);*/
+}
+
 .navbar ul {
 	flex-direction: row;
 }
@@ -47,6 +53,10 @@ p {
 
 .col-pre-launch-col {
 	margin: 60px 0 0;
+}
+
+.col-pre-launch-col p {
+	padding: 0 65px 0 0px;
 }
 
 .signup-form {
@@ -83,7 +93,7 @@ p {
 .service_section p {
 	margin: 0;
     color: #2d2f30;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
 }
 
@@ -95,7 +105,28 @@ p {
     background: #fff;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.06), 0 15px 70px 0 rgba(22, 26, 26, 0.06);
     padding: 35px;
-    min-height: 370px;
+}
+
+.service_row {
+	display: flex;
+}
+
+.service_row a {
+	width: 100%;
+	float: left;
+	transition: 0.3s ease-in-out 0s;
+}
+
+.service_row a:hover {
+	margin-top: -5px;
+}
+
+.banner_col {
+	margin: 80px 0 0;
+}
+
+.banner_col img {
+	width: 100%;
 }
 
 @media (max-width: 767px) {
