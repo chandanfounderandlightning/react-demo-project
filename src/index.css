@@ -246,6 +246,84 @@ footer ul li a:hover {
 	margin: 90px 0 70px;
 }
 
+.popup_box {
+	position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.popup_row {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.popup_col {
+	background-color: #fff;
+	padding: 40px 40px 30px;
+	position: relative;
+}
+
+.popup_col input {
+	border: 1px solid #bdbdbd;
+	border-radius: 0;
+	padding: 6px 15px;
+	width: 100%;
+	margin-bottom: 16px;
+	outline: none;
+}
+
+.popup_col input:focus {
+	border-color: #ef3854;
+}
+
+.popup_col textarea {
+	width: 100%;
+	border: 1px solid #bdbdbd;
+	resize: none;
+	padding: 6px 15px;
+	height: 90px;
+	outline: none;
+}
+
+.popup_col textarea:focus {
+	border-radius: 0;
+	border-color: #ef3854;
+	outline: none;
+}
+
+.form-submit {
+	width: 100%;
+	float: left;
+}
+
+.form-submit .submit-btn {
+	width: auto;
+	float: left;
+	background-color: #ef3854;
+	color: #fff;
+	border: none;
+	margin: 16px 0 0;
+	cursor: pointer;
+	padding: 8px 20px 6px;
+	font-weight: 600;
+}
+
+.popup-remove {
+	position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
 @media (max-width: 767px) {
 	.col_services {
 		margin-bottom: 20px;
@@ -265,6 +343,10 @@ footer ul li a:hover {
 	}
 
 	.col-xs-12 {
+		width: 100%;
+	}
+
+	.popup_row {
 		width: 100%;
 	}
 }

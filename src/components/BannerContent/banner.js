@@ -1,7 +1,19 @@
 import React from 'react';
 import { withRouter, Link} from 'react-router-dom';
+import Popup from '../../Home/Popup'
 
 export default class Banner extends React.Component {
+    constructor(props) {
+       super(props);
+       this.state = {
+          isModalOpen: false,
+       };
+       this.onView = this.onView.bind(this);
+   }  onView(){
+       this.setState({
+          isModalOpen: true
+        });
+  }
     render() {
     	const {data} = this.props;
         return(
@@ -10,11 +22,12 @@ export default class Banner extends React.Component {
                     	<div className="col-pre-launch-col new-approach-col flex">
                         	<h1>{data.heading}</h1>
                             <p>{data.paragraph}</p>
-                            <a className="btn btn-primary signup-form" href="javascript:void();" data-toggle="modal" data-target="#myModal">{data.button}</a>
+                            <a onClick={this.onView} className="btn btn-primary signup-form" href="javascript:void();" data-toggle="modal" data-target="#myModal">{data.button}</a>
                             <div className="header-invite full-width">
                             	<small>{data.bottom_content}</small>
                             </div>
                         </div>
+                        {(this.state.isModalOpen===true) ? <Popup /> : ''}
                     </div>
             </div>
         )
