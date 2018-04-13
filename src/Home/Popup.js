@@ -8,7 +8,7 @@ export default class Popup extends React.Component {
     				<div className="popup_row">
     					<div className="popup_col">
     						<span className="popup-remove">
-    							<img src="./images/ic_close_16.svg"/>
+    							
     						</span>
     						<input type="text" placeholder="Enter Name" />
     						<input type="text" placeholder="Enter Email" />

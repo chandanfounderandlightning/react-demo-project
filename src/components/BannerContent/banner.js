@@ -9,10 +9,17 @@ export default class Banner extends React.Component {
           isModalOpen: false,
        };
        this.onView = this.onView.bind(this);
-   }  onView(){
-       this.setState({
-          isModalOpen: true
-        });
+       this.onClose = this.onClose.bind(this);
+    }  
+    onView(){
+        this.setState({
+        isModalOpen: true
+    });
+    }
+     onClose(){
+        this.setState({
+        isModalOpen: false
+    });
   }
     render() {
     	const {data} = this.props;
@@ -27,7 +34,9 @@ export default class Banner extends React.Component {
                             	<small>{data.bottom_content}</small>
                             </div>
                         </div>
-                        {(this.state.isModalOpen===true) ? <Popup /> : ''}
+                        {(this.state.isModalOpen===true) ? <div><Popup /><button onClick={this.onClose} type="button" class="close">
+                                    <img src="./images/ic_close_16.svg"/>
+                                </button></div> : ''}
                     </div>
             </div>
         )
