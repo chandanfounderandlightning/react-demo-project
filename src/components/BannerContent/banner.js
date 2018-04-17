@@ -34,9 +34,9 @@ export default class Banner extends React.Component {
                             	<small>{data.bottom_content}</small>
                             </div>
                         </div>
-                        {(this.state.isModalOpen===true) ? <div><Popup /><button onClick={this.onClose} type="button" class="close">
+                        {(this.state.isModalOpen===true) ? <div className="popup_box"><div className="popup_row"><div className="popup_col"><Popup /><button onClick={this.onClose} type="button" class="close">
                                     <img src="./images/ic_close_16.svg"/>
-                                </button></div> : ''}
+                                </button></div></div></div> : ''}
                     </div>
             </div>
         )

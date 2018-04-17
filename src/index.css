@@ -265,6 +265,7 @@ footer ul li a:hover {
 	text-align: center;
 	width: 500px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .popup_col {
@@ -318,7 +319,7 @@ footer ul li a:hover {
 	font-weight: 600;
 }
 
-.popup-remove {
+.close {
 	position: absolute;
     top: 0px;
     right: 5px;
