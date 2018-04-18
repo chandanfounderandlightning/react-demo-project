@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../src/Header';
 import Footer from '../../src/footer';
 import { withRouter } from 'react-router-dom';
-import content from './content.json';
+import servicecontent from './servicecontent.json';
 import banner from './banner.json';
 import review from './review.json';
 import Listing from '../components/ListingContent/listing'
@@ -28,7 +28,7 @@ class Home extends React.Component {
                     <section className="service_section">
                         <div className="container">
                             <div className="row"> 
-                               <Listing data={content}/>
+                               <Listing data={servicecontent}/>
                             </div>
                         </div>
                     </section>
