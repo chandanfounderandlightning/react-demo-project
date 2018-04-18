@@ -9,6 +9,10 @@
 	margin: 0;
 }
 
+.faq_row p {
+	margin: 15px 0 0;
+}
+
 .faq-heading {
 	margin: 0 0 50px;
 }
