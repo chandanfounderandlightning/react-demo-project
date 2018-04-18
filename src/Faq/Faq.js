@@ -17,6 +17,9 @@ class Faq extends React.Component {
                     <section className="faq_section">
                         <div className="container">
                             <div className="row">
+                                <div className="faq-heading text-center w-100">
+                                    <h1>Faq's</h1>
+                                </div>
                                 <Faqlistcontent data={Faqcontent.questions}/>
                             </div>
                         </div>
