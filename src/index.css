@@ -279,12 +279,11 @@ footer ul li a:hover {
 	border-radius: 0;
 	padding: 6px 15px;
 	width: 100%;
-	margin-bottom: 16px;
 	outline: none;
 }
 
 .popup_col input:focus {
-	border-color: #ef3854;
+  border-color: #ef3854;
 }
 
 .popup_col textarea {
@@ -323,6 +322,25 @@ footer ul li a:hover {
 	position: absolute;
     top: 0px;
     right: 5px;
+}
+
+.error {
+  bottom: -21px;
+  color: red;
+  font-size: 13px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group:last-child {
+	margin: 0;
 }
 
 @media (max-width: 767px) {

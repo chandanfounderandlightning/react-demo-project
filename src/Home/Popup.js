@@ -1,15 +1,71 @@
 import React from 'react';
 
 export default class Popup extends React.Component {
+	constructor(props) {
+    super(props);
+    this.state = {fname: '', lname: '', email: '', ferror: '', lerror: '', Eerror: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+	this.handleLastname = this.handleLastname.bind(this);
+	this.handleEmail = this.handleEmail.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({fname: event.target.value});
+       if (this.state.fname != ''){
+        this.setState({ferror: ''});
+	}
+  }
+
+  handleLastname(event) {
+    this.setState({lname: event.target.value});
+       if (this.state.lname != ''){
+        this.setState({lerror: ''});
+	}
+  }
+
+  handleEmail(event) {
+    this.setState({email: event.target.value});
+       if (this.state.email != ''){
+        this.setState({Eerror: ''});
+	}
+  }
+
+  handleSubmit(event) {
+	  if (this.state.fname === ''){
+       this.setState({ferror: 'Please enter first name'});
+	}
+	else if (this.state.lname === ''){
+       this.setState({lerror: 'Please enter last name'});
+	}
+	else if (this.state.email === ''){
+       this.setState({Eerror: 'Please enter email address'});
+	}
+    else{
+       alert('Hello: ' + this.state.fname + ' ' + this.state.lname);
+	}
+  }
     render() {
     	return(
             <div>
-    		    <input type="text" placeholder="Enter Name" />
-    			<input type="text" placeholder="Enter Email" />
-    			<textarea type="text" placeholder="Enter Message" />
-    			<span className="form-submit">
-    			    <input className="submit-btn" type="submit" value="Submit" />
-    			</span>
+				<form>
+					<div className="form-group">
+						<input placeholder="Enter First Name" type="text" name="fname" value={this.state.value} onChange={this.handleChange} />
+						<span className="error">{this.state.ferror}</span>
+					</div>
+					<div className="form-group">
+						<input placeholder="Enter Last Name" type="text" name="lname" value={this.state.value} onChange={this.handleLastname} />
+						<span className="error">{this.state.lerror}</span>
+					</div>
+					<div className="form-group">
+						<input placeholder="Enter Email" type="text" name="email" value={this.state.value} onChange={this.handleEmail} />
+						<span className="error">{this.state.Eerror}</span>
+					</div>
+					<span className="form-submit">
+						<input className="submit-btn" type="button" onClick={this.handleSubmit} value="Submit" />
+					</span>
+				</form>
     		</div>
     	)
     }
