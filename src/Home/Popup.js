@@ -1,7 +1,8 @@
 import React from 'react';
+import axios from 'axios'
 
 export default class Popup extends React.Component {
-	constructor(props) {
+	/*constructor(props) {
     super(props);
     this.state = {fname: '', lname: '', email: '', ferror: '', lerror: '', Eerror: ''};
 
@@ -45,7 +46,20 @@ export default class Popup extends React.Component {
     else{
        alert('Hello: ' + this.state.fname + ' ' + this.state.lname);
 	}
-  }
+  }*/
+
+	constructor () {
+  	super()
+		this.state = {
+			username: ''
+		}
+  	this.handleClick = this.handleClick.bind(this)
+	}
+
+	handleClick () {
+  	axios.get('https://api.github.com/users/maecapozzi')
+    .then(response => console.log(response))
+	}
     render() {
     	return(
             <div>
@@ -63,7 +77,7 @@ export default class Popup extends React.Component {
 						<span className="error">{this.state.Eerror}</span>
 					</div>
 					<span className="form-submit">
-						<input className="submit-btn" type="button" onClick={this.handleSubmit} value="Submit" />
+						<input className="submit-btn" type="button" onClick={this.handleClick} value="Submit" />
 					</span>
 				</form>
     		</div>
