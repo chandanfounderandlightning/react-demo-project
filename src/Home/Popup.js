@@ -46,7 +46,17 @@ export default class Popup extends React.Component {
     else{
        alert('Hello: ' + this.state.fname + ' ' + this.state.lname);
 	}
-  }*/
+  }
+	
+	<div className="form-group">
+		<input placeholder="Enter Last Name" type="text" name="lname" value={this.state.value} onChange={this.handleLastname} />
+		<span className="error">{this.state.lerror}</span>
+	</div>
+	<div className="form-group">
+		<input placeholder="Enter Email" type="text" name="email" value={this.state.value} onChange={this.handleEmail} />
+		<span className="error">{this.state.Eerror}</span>
+	</div>
+*/
 
 	constructor () {
   	super()
@@ -67,14 +77,6 @@ export default class Popup extends React.Component {
 					<div className="form-group">
 						<input placeholder="Enter First Name" type="text" name="fname" value={this.state.value} onChange={this.handleChange} />
 						<span className="error">{this.state.ferror}</span>
-					</div>
-					<div className="form-group">
-						<input placeholder="Enter Last Name" type="text" name="lname" value={this.state.value} onChange={this.handleLastname} />
-						<span className="error">{this.state.lerror}</span>
-					</div>
-					<div className="form-group">
-						<input placeholder="Enter Email" type="text" name="email" value={this.state.value} onChange={this.handleEmail} />
-						<span className="error">{this.state.Eerror}</span>
 					</div>
 					<span className="form-submit">
 						<input className="submit-btn" type="button" onClick={this.handleClick} value="Submit" />
