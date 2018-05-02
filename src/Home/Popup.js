@@ -75,7 +75,7 @@ export default class Popup extends React.Component {
 	keyUpHandler(refName, e) {
         console.log(refName);
 				console.log(e.target.value);
-				axios.get('https://api.github.com/users/chandanucreate')
+				axios.get(`https://api.github.com/users/${e.target.value}`)
     		.then((response) => {
 					this.setState({
 						username: response.data.name,
