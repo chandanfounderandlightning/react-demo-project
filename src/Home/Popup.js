@@ -61,28 +61,46 @@ export default class Popup extends React.Component {
 	constructor () {
   	super()
 		this.state = {
-			username: ''
+			username: '',
+			avatar_url: '',
 		}
-  	this.handleClick = this.handleClick.bind(this)
+  	this.handleClick = this.handleClick.bind(this);
+		this.handleLoginKeyUp = this.keyUpHandler.bind(this, 'LoginInput');
 	}
 
 	handleClick () {
-  	axios.get('https://api.github.com/users/maecapozzi')
-    .then(response => console.log(response))
+  	axios.get('https://api.github.com/users/chandanucreate')
+    .then(response => this.setState({username: response.data.name}))
 	}
+	keyUpHandler(refName, e) {
+        console.log(refName);
+				console.log(e.target.value);
+				axios.get('https://api.github.com/users/chandanucreate')
+    		.then((response) => {
+					this.setState({
+						username: response.data.name,
+						avatar_url: response.data.avatar_url,
+					});
+
+				})
+  }
     render() {
     	return(
-            <div>
+      <div>
 				<form>
 					<div className="form-group">
-						<input placeholder="Enter First Name" type="text" name="fname" value={this.state.value} onChange={this.handleChange} />
+						<input placeholder="Enter First Name" type="text" name="fname" onKeyUp={this.handleLoginKeyUp} ref="LoginInput" />
 						<span className="error">{this.state.ferror}</span>
 					</div>
-					<span className="form-submit">
+					<span className="form-submit text-left">
+						<p>{this.state.username}</p>
+						<span className="git_avtar">
+							<img src={this.state.avatar_url} />
+						</span>
 						<input className="submit-btn" type="button" onClick={this.handleClick} value="Submit" />
 					</span>
 				</form>
-    		</div>
+    	</div>
     	)
     }
 }
