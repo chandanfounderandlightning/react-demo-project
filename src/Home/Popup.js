@@ -61,41 +61,33 @@ export default class Popup extends React.Component {
 	constructor () {
   	super()
 		this.state = {
+			fname: '',
 			username: '',
-			avatar_url: '',
+			avatar: ''
 		}
   	this.handleClick = this.handleClick.bind(this);
-		this.handleLoginKeyUp = this.keyUpHandler.bind(this, 'LoginInput');
 	}
+
+ updateName = (e) => {
+   this.setState({fname: e.target.value})
+ }
 
 	handleClick () {
-  	axios.get('https://api.github.com/users/chandanucreate')
-    .then(response => this.setState({username: response.data.name}))
+  	axios.get('https://api.github.com/users/'+ this.state.fname +'')
+    .then(response => this.setState({username: response.data.name, avatar: response.data.avatar_url}))
 	}
-	keyUpHandler(refName, e) {
-        console.log(refName);
-				console.log(e.target.value);
-				axios.get(`https://api.github.com/users/${e.target.value}`)
-    		.then((response) => {
-					this.setState({
-						username: response.data.name,
-						avatar_url: response.data.avatar_url,
-					});
-
-				})
-  }
     render() {
     	return(
       <div>
 				<form>
 					<div className="form-group">
-						<input placeholder="Enter First Name" type="text" name="fname" onKeyUp={this.handleLoginKeyUp} ref="LoginInput" />
+						<input placeholder="Enter First Name" type="text" name="fname" value={this.state.fname} onChange={this.updateName}/>
 						<span className="error">{this.state.ferror}</span>
 					</div>
 					<span className="form-submit text-left">
 						<p>{this.state.username}</p>
 						<span className="git_avtar">
-							<img src={this.state.avatar_url} />
+							<img src={this.state.avatar} />
 						</span>
 						<input className="submit-btn" type="button" onClick={this.handleClick} value="Submit" />
 					</span>
